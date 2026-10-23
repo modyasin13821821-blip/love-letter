@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#4a0d1e">
+  <title>آیا وکیلم؟</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lalezar&family=Noto+Nastaliq+Urdu:wght@400;700&family=Vazirmatn:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="petals" aria-hidden="true"></canvas>
+
+  <!-- صفحهٔ اول: خطبهٔ عقد -->
+  <main id="page-aghd" class="page">
+    <svg class="sofreh" viewBox="0 0 220 110" aria-hidden="true">
+      <defs>
+        <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#f6dd8f"/>
+          <stop offset=".5" stop-color="#d4a64a"/>
+          <stop offset="1" stop-color="#9c7425"/>
+        </linearGradient>
+        <radialGradient id="glass" cx=".4" cy=".35" r=".7">
+          <stop offset="0" stop-color="#fffaf0"/>
+          <stop offset=".6" stop-color="#d9e4ea"/>
+          <stop offset="1" stop-color="#9fb2bd"/>
+        </radialGradient>
+        <radialGradient id="flame" cx=".5" cy=".7" r=".6">
+          <stop offset="0" stop-color="#fff6c2"/>
+          <stop offset=".6" stop-color="#ffc24a"/>
+          <stop offset="1" stop-color="#ff7a1a" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <!-- شمعدان راست -->
+      <g class="shamdan" transform="translate(178 0)">
+        <ellipse class="flame" cx="0" cy="24" rx="5" ry="10" fill="url(#flame)"/>
+        <rect x="-3" y="32" width="6" height="22" rx="1.5" fill="#fffaf0"/>
+        <path d="M-12 56 h24 l-4 6 h-16z" fill="url(#gold)"/>
+        <rect x="-2.5" y="62" width="5" height="26" fill="url(#gold)"/>
+        <path d="M-14 100 q14 -16 28 0z" fill="url(#gold)"/>
+        <circle cx="0" cy="75" r="4" fill="url(#gold)"/>
+      </g>
+      <!-- شمعدان چپ -->
+      <g class="shamdan" transform="translate(42 0)">
+        <ellipse class="flame" cx="0" cy="24" rx="5" ry="10" fill="url(#flame)"/>
+        <rect x="-3" y="32" width="6" height="22" rx="1.5" fill="#fffaf0"/>
+        <path d="M-12 56 h24 l-4 6 h-16z" fill="url(#gold)"/>
+        <rect x="-2.5" y="62" width="5" height="26" fill="url(#gold)"/>
+        <path d="M-14 100 q14 -16 28 0z" fill="url(#gold)"/>
+        <circle cx="0" cy="75" r="4" fill="url(#gold)"/>
+      </g>
+      <!-- آینه -->
+      <g transform="translate(110 0)">
+        <path d="M0 4 q8 0 10 8 q14 -2 20 10 q10 10 4 24 q8 14 -4 28 q-6 14 -20 14 q-4 10 -10 10 q-6 0 -10 -10 q-14 0 -20 -14 q-12 -14 -4 -28 q-6 -14 4 -24 q6 -12 20 -10 q2 -8 10 -8z" fill="url(#gold)"/>
+        <ellipse cx="0" cy="56" rx="22" ry="34" fill="url(#glass)" stroke="#9c7425" stroke-width="1.5"/>
+        <path d="M-10 36 q4 -10 14 -12" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" opacity=".8"/>
+        <rect x="-16" y="100" width="32" height="6" rx="3" fill="url(#gold)"/>
+      </g>
+    </svg>
+
+    <article class="card">
+      <p class="bismillah">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيمِ</p>
+      <div class="arabic" lang="ar">
+        <p>اَلْحَمْدُ لِلّٰهِ الَّذِي أَحَلَّ النِّكَاحَ وَحَرَّمَ السِّفَاحَ، وَالصَّلَاةُ وَالسَّلَامُ عَلَىٰ سَيِّدِنَا مُحَمَّدٍ وَآلِهِ الطَّيِّبِينَ الطَّاهِرِينَ.</p>
+        <p>قَالَ اللّٰهُ تَعَالَىٰ: ﴿وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ أَزْوَاجًا لِتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَوَدَّةً وَرَحْمَةً﴾</p>
+        <p>وَقَالَ رَسُولُ اللّٰهِ (ص): اَلنِّكَاحُ سُنَّتِي، فَمَنْ رَغِبَ عَنْ سُنَّتِي فَلَيْسَ مِنِّي.</p>
+      </div>
+      <p class="khotbe">
+        دوشیزهٔ مکرمه، سرکار خانم <strong>حنا جفائی</strong>؛ آیا به بنده وکالت می‌دهید که شما را با مهریهٔ معلوم، به عقد دائم و همیشگی جناب آقای <strong>محمدیاسین حقیقت اسفروشان</strong> درآورم؟
+      </p>
+      <div class="mahrieh">
+        <h2>مهریه</h2>
+        <ul>
+          <li>یک جلد کلام‌الله مجید</li>
+          <li>یک آینه و شمعدان</li>
+          <li>۱۴ شاخه گل رز سرخ</li>
+          <li>یک عمر خندیدن به شوخی‌های بی‌مزه‌اش</li>
+          <li>و یک دنیا دوست داشتن</li>
+        </ul>
+      </div>
+
+      <h1 class="vakilam">آیا وکیلم؟</h1>
+      <p id="round-note" class="round-note" aria-live="polite"></p>
+
+      <p id="toast" class="toast" aria-live="polite"></p>
+
+      <div class="buttons">
+        <button id="btn-no" class="btn btn-no" type="button">خیر</button>
+        <button id="btn-yes" class="btn btn-yes" type="button">با اجازهٔ بزرگترا، بله</button>
+      </div>
+    </article>
+  </main>
+
+  <!-- صفحهٔ دوم: جشن و آهنگ -->
+  <main id="page-jashn" class="page" hidden>
+    <header class="jashn-head">
+      <h1>حنا گفت بله 💍</h1>
+      <p>از این لحظه رسماً مال همیم. اینم آهنگایی که برات انتخاب کردم:</p>
+    </header>
+
+    <section class="player" aria-label="پخش‌کنندهٔ موسیقی">
+      <div class="turntable">
+        <div id="vinyl" class="vinyl"><div class="label">♥</div></div>
+        <div class="arm" id="arm"></div>
+      </div>
+
+      <div class="now">
+        <div id="now-title" class="now-title">—</div>
+        <div id="now-artist" class="now-artist">—</div>
+      </div>
+
+      <div class="seek">
+        <input id="seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="جلو و عقب کردن">
+        <div class="times"><span id="t-cur">۰:۰۰</span><span id="t-dur">۰:۰۰</span></div>
+      </div>
+
+      <div class="controls">
+        <button id="btn-prev" class="ctl" type="button" aria-label="آهنگ قبلی">
+          <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zM9.5 12 18 18V6z"/></svg>
+        </button>
+        <button id="btn-play" class="ctl ctl-main" type="button" aria-label="پخش">
+          <svg class="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </button>
+        <button id="btn-next" class="ctl" type="button" aria-label="آهنگ بعدی">
+          <svg viewBox="0 0 24 24"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg>
+        </button>
+      </div>
+
+      <ol id="playlist" class="playlist"></ol>
+    </section>
+
+    <section class="sher" aria-label="شعر">
+      <div class="beyt">
+        <span>من از آن روز که در بند توام آزادم</span>
+        <span>پادشاهم که به دست تو اسیر افتادم</span>
+      </div>
+      <div class="beyt">
+        <span>همه غم‌های جهان هیچ اثر می‌نکند</span>
+        <span>در من از بس که به دیدار عزیزت شادم</span>
+      </div>
+      <p class="shaer">— سعدی</p>
+      <div class="beyt">
+        <span>در ازل پرتو حسنت ز تجلی دم زد</span>
+        <span>عشق پیدا شد و آتش به همه عالم زد</span>
+      </div>
+      <p class="shaer">— حافظ</p>
+    </section>
+
+    <button id="btn-again" class="btn-again" type="button">یه بار دیگه بله بگو 😄</button>
+  </main>
+
+  <audio id="audio" preload="none"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

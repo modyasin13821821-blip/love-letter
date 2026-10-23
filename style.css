@@ -1,0 +1,452 @@
+:root {
+  --zereshki: #4a0d1e;
+  --zereshki-deep: #2a0610;
+  --gold: #d4a64a;
+  --gold-light: #f6dd8f;
+  --cream: #fbf3e2;
+  --ink: #3b2414;
+  --rose: #d6204e;
+  --rose-dark: #a8143a;
+}
+
+* { box-sizing: border-box; }
+
+html, body { margin: 0; overflow-x: hidden; }
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(212, 166, 74, .25), transparent 55%),
+    repeating-linear-gradient(45deg, rgba(212, 166, 74, .05) 0 2px, transparent 2px 18px),
+    linear-gradient(180deg, var(--zereshki), var(--zereshki-deep));
+  background-attachment: fixed;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#petals {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+}
+
+.page[hidden] { display: none; }
+
+/* ---------- آینه و شمعدان ---------- */
+.sofreh {
+  display: block;
+  width: 72%;
+  max-width: 260px;
+  margin: 4px auto -18px;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .45));
+}
+.flame { transform-origin: center 80%; transform-box: fill-box; animation: flicker 1.6s ease-in-out infinite alternate; }
+.shamdan:last-of-type .flame { animation-delay: -.7s; }
+@keyframes flicker {
+  0% { transform: scale(1, 1); opacity: .9; }
+  50% { transform: scale(.9, 1.08); opacity: 1; }
+  100% { transform: scale(1.05, .95); opacity: .85; }
+}
+
+/* ---------- کارت عقدنامه ---------- */
+.card {
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 30%, #fffaf0, var(--cream) 70%, #f1e2c4);
+  border-radius: 14px;
+  padding: 34px 22px 26px;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+  /* حاشیهٔ ترمه‌ای */
+  border: 12px solid transparent;
+  border-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'><rect width='36' height='36' fill='%237a1a2c'/><path d='M18 4c5 4 6 9 2 13 4-1 7 2 6 6-3-2-6-2-8 1-2-3-5-3-8-1-1-4 2-7 6-6-4-4-3-9 2-13z' fill='%23d4a64a'/><circle cx='18' cy='26' r='2' fill='%23f6dd8f'/><circle cx='4' cy='4' r='2' fill='%23d4a64a'/><circle cx='32' cy='32' r='2' fill='%23d4a64a'/><circle cx='32' cy='4' r='2' fill='%23d4a64a'/><circle cx='4' cy='32' r='2' fill='%23d4a64a'/></svg>") 12 round;
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border: 1.5px solid var(--gold);
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.bismillah {
+  font-family: "Lalezar", serif;
+  color: var(--zereshki);
+  font-size: 1.35rem;
+  margin: 0 0 14px;
+}
+
+.bismillah { font-family: "Amiri", "Lalezar", serif; font-weight: 700; font-size: 1.45rem; }
+
+.arabic {
+  font-family: "Amiri", serif;
+  font-size: 1.12rem;
+  line-height: 2.1;
+  color: #2a1408;
+  margin: 0 0 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(212, 166, 74, .6);
+}
+.arabic p { margin: 0 0 6px; }
+
+.khotbe {
+  line-height: 2.1;
+  font-size: 1.02rem;
+  margin: 0 0 16px;
+  text-align: justify;
+  text-align-last: center;
+}
+.khotbe strong { color: var(--rose-dark); }
+
+.mahrieh {
+  background: rgba(212, 166, 74, .12);
+  border: 1px dashed var(--gold);
+  border-radius: 10px;
+  padding: 10px 14px 6px;
+  margin-bottom: 20px;
+}
+.mahrieh h2 {
+  font-family: "Lalezar", serif;
+  font-weight: 400;
+  color: var(--zereshki);
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+}
+.mahrieh ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 2;
+  font-size: .95rem;
+}
+.mahrieh li::before { content: "❀ "; color: var(--gold); }
+
+.round-note {
+  min-height: 0;
+  margin: 0;
+  color: var(--rose-dark);
+  font-weight: 600;
+  font-size: .95rem;
+}
+.round-note:not(:empty) { margin-bottom: 4px; animation: pop .5s ease; }
+
+.vakilam {
+  font-family: "Noto Nastaliq Urdu", serif;
+  font-weight: 700;
+  font-size: 2.3rem;
+  line-height: 2.4;
+  margin: 0 0 6px;
+  color: var(--zereshki);
+  text-shadow: 0 2px 0 rgba(212, 166, 74, .45);
+}
+
+.toast {
+  margin: 0 0 10px;
+  min-height: 1.6em;
+  font-weight: 800;
+  color: var(--rose);
+  font-size: 1.05rem;
+  opacity: 0;
+}
+.toast.show { animation: toastIn .6s cubic-bezier(.2, 1.4, .4, 1) forwards; }
+@keyframes toastIn {
+  0% { opacity: 0; transform: translateY(10px) scale(.8); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes pop {
+  0% { opacity: 0; transform: scale(.85); }
+  100% { opacity: 1; transform: none; }
+}
+
+/* ---------- دکمه‌ها ---------- */
+.buttons {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 14px;
+  padding: 28px 0 22px;
+  min-height: 150px;
+  justify-content: center;
+}
+
+.btn {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 999px;
+  padding: 12px 26px;
+  cursor: pointer;
+  transition: transform .45s cubic-bezier(.3, 1.5, .5, 1), opacity .3s, background .2s;
+  touch-action: manipulation;
+  max-width: 100%;
+}
+
+.btn-no {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  transform: scale(var(--s, 1));
+}
+.btn-no.gone { opacity: 0; pointer-events: none; visibility: hidden; }
+
+.btn-yes {
+  background: linear-gradient(180deg, #e8355f, var(--rose-dark));
+  color: #fff;
+  border: none;
+  font-weight: 800;
+  box-shadow: 0 6px 16px rgba(168, 20, 58, .45);
+  transform: scale(var(--s, 1));
+  position: relative;
+  z-index: 3;
+}
+.btn-yes:active { filter: brightness(.92); }
+
+/* ---------- صفحهٔ دوم ---------- */
+.jashn-head {
+  text-align: center;
+  color: var(--cream);
+  padding: 10px 4px 6px;
+}
+.jashn-head h1 {
+  font-family: "Lalezar", serif;
+  font-weight: 400;
+  font-size: 2.6rem;
+  margin: 6px 0 4px;
+  color: var(--gold-light);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, .5);
+  animation: pop .8s ease;
+}
+.jashn-head p { margin: 0 0 18px; line-height: 1.9; opacity: .92; }
+
+.player {
+  background: rgba(251, 243, 226, .97);
+  border-radius: 20px;
+  padding: 20px 16px 14px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, .45);
+  border: 2px solid var(--gold);
+}
+
+.turntable {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  max-width: 62vw;
+  max-height: 62vw;
+  margin: 0 auto 14px;
+}
+.vinyl {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, transparent 0 30%, rgba(255, 255, 255, .06) 30.5% 31%, transparent 31.5% 40%, rgba(255, 255, 255, .06) 40.5% 41%, transparent 41.5% 52%, rgba(255, 255, 255, .06) 52.5% 53%, transparent 53.5% 66%, rgba(255, 255, 255, .06) 66.5% 67%, transparent 67.5%),
+    conic-gradient(from 0deg, #111, #2b2b2b 12%, #111 25%, #2b2b2b 37%, #111 50%, #2b2b2b 62%, #111 75%, #2b2b2b 87%, #111);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .4), inset 0 0 0 4px #000;
+  display: grid;
+  place-items: center;
+  animation: spin 3.2s linear infinite;
+  animation-play-state: paused;
+}
+.vinyl.playing { animation-play-state: running; }
+.vinyl .label {
+  width: 34%;
+  height: 34%;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0 8%, var(--rose) 9% 100%);
+  border: 3px solid var(--gold);
+  display: grid;
+  place-items: center;
+  color: var(--gold-light);
+  font-size: 1.2rem;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.arm {
+  position: absolute;
+  top: -6px;
+  left: -4px;
+  width: 8px;
+  height: 46%;
+  background: linear-gradient(90deg, #b8b8b8, #eee, #9a9a9a);
+  border-radius: 4px;
+  transform-origin: 50% 6px;
+  transform: rotate(-28deg);
+  transition: transform .6s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .3);
+}
+.arm::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -6px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.arm::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: -3px;
+  width: 14px;
+  height: 18px;
+  border-radius: 3px;
+  background: #555;
+}
+.arm.on { transform: rotate(-8deg); }
+
+.now { text-align: center; margin-bottom: 8px; }
+.now-title {
+  font-family: "Lalezar", serif;
+  font-size: 1.4rem;
+  color: var(--zereshki);
+  overflow-wrap: anywhere;
+}
+.now-artist { color: #7a5a3a; font-size: .95rem; }
+
+.seek input {
+  width: 100%;
+  accent-color: var(--rose);
+  direction: ltr;
+  margin: 6px 0 0;
+}
+.times {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  font-size: .8rem;
+  color: #7a5a3a;
+  font-variant-numeric: tabular-nums;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin: 10px 0 14px;
+}
+.ctl {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--zereshki);
+  background: transparent;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.ctl svg { width: 24px; height: 24px; fill: var(--zereshki); }
+/* در صفحهٔ راست‌چین، آیکن‌های قبلی/بعدی برعکس می‌شن تا جهت منطقی باشه */
+#btn-prev svg, #btn-next svg { transform: scaleX(-1); }
+.ctl-main {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(180deg, #e8355f, var(--rose-dark));
+  border: none;
+  box-shadow: 0 6px 14px rgba(168, 20, 58, .4);
+}
+.ctl-main svg { fill: #fff; width: 30px; height: 30px; }
+.ctl-main .i-pause { display: none; }
+.ctl-main.playing .i-play { display: none; }
+.ctl-main.playing .i-pause { display: block; }
+
+.playlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(122, 90, 58, .25);
+  max-height: 300px;
+  overflow-y: auto;
+}
+.playlist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 6px;
+  border-bottom: 1px solid rgba(122, 90, 58, .15);
+  cursor: pointer;
+  border-radius: 8px;
+}
+.playlist li:active { background: rgba(212, 166, 74, .2); }
+.playlist li.active { background: rgba(214, 32, 78, .1); }
+.playlist .num {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--zereshki);
+  color: var(--gold-light);
+  display: grid;
+  place-items: center;
+  font-size: .85rem;
+}
+.playlist li.active .num { background: var(--rose); }
+.playlist .meta { min-width: 0; }
+.playlist .t { font-weight: 600; overflow-wrap: anywhere; }
+.playlist .a { font-size: .82rem; color: #7a5a3a; }
+.playlist .empty { cursor: default; justify-content: center; color: #7a5a3a; }
+
+/* ---------- شعر ---------- */
+.sher {
+  margin-top: 20px;
+  padding: 18px 14px 10px;
+  text-align: center;
+  color: var(--gold-light);
+  border: 1px solid rgba(212, 166, 74, .6);
+  border-radius: 16px;
+  background: rgba(42, 6, 16, .45);
+}
+.beyt {
+  display: flex;
+  flex-direction: column;
+  font-family: "Noto Nastaliq Urdu", serif;
+  font-size: 1.05rem;
+  line-height: 2.5;
+}
+.beyt + .beyt { margin-top: 6px; }
+.beyt span:last-child { color: var(--cream); }
+.shaer {
+  margin: 6px 0 14px;
+  font-size: .85rem;
+  color: var(--gold);
+}
+
+.btn-again {
+  display: block;
+  margin: 22px auto 0;
+  font-family: inherit;
+  font-size: .9rem;
+  background: rgba(251, 243, 226, .12);
+  color: var(--cream);
+  border: 1px solid var(--gold);
+  border-radius: 999px;
+  padding: 8px 18px;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  .vinyl { animation: none; }
+}
